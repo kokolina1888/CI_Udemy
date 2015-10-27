@@ -1,5 +1,7 @@
 <?php 
-echo "<pre>";
+
+//echo $result;
+/*echo "<pre>";
 var_dump($result[0]);
 echo "</pre>";
 echo "<table border='1'>";
@@ -15,5 +17,9 @@ foreach ($result as $object) {
 	}
 }
 echo "</tr>";
-echo "</table>";
+echo "</table>";*/
+
+foreach ($result as $object) {
+	echo $object->username . "<br>";
+}
 ?>
