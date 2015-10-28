@@ -1,7 +1,7 @@
 <?php 
 class Users extends CI_Controller {
 
-	public function show($user_id)
+	/*public function show($user_id)
 	{
 		$data['result'] = $this->user_model->get_users($user_id);
 
@@ -9,7 +9,7 @@ class Users extends CI_Controller {
 			echo $object->username.'<br>';
 		}*/
 
-		$this->load->view('user_view', $data);
+		/*$this->load->view('user_view', $data);
 	}
 
 
@@ -36,17 +36,22 @@ class Users extends CI_Controller {
 		$password = 'secret';
 
 		$this->user_model->update_users([
-
 			'username'=>$username,
 			'password'=>$password
-
 			], $id);
 	}
 
 	public function delete() {
 		$id = 3;
 		$this->user_model->delete_user($id);
-	}
+	}*/
+
+	public function login() {
+
+		echo $this->input->post('username');
+
+
+	}//end of login
 }
 
 
