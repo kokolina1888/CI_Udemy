@@ -2,7 +2,7 @@
 
 class User_model extends CI_Model {
 
-	public function get_users($user_id)
+	/*public function get_users($user_id)
 	{
 
 		$this->db->where(['id' => $user_id]);
@@ -26,10 +26,10 @@ class User_model extends CI_Model {
 
 		//$query = $this->db->get('users');
 		//return $query->result();
-	}//end of get_users
+	//}//end of get_users
 
 
-	public function create_users($data)
+	/*public function create_users($data)
 	{
 
 		$this->db->insert('users', $data);
@@ -50,8 +50,28 @@ class User_model extends CI_Model {
 		$this->db->where(['id'=>$id]);
 		$this->db->delete('users');
 
-	}//end of delete_user(
+	}//end of delete_user
+	*/
+	public function login_user($username, $password)
+	{
+		//$this->db->where('username'=>$username, 'password'=>$password);
+		$this->db->where('username', $username);
+		$this->db->where('password', $password);
+
+		$result = $this->db->get('users');
+
+		if ($result) {
+
+			return $result->row(0)->id;
+
+		} else {
+			
+			return FALSE;
+		
+		}
+
+	}
 }
 
 
-?>
+?> 
